@@ -10,7 +10,7 @@ public class NumbersConverterTest {
     @Test
     public void testDivThree() throws Exception {
         NumbersConverter nc = new NumbersConverter();
-        assertTrue("Fizz".equals(nc.divThree(3).toString()));
+        assertTrue("Fizz".equals(nc.divThree(3)));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class NumbersConverterTest {
     @Test
     public void testDivFive() throws Exception {
         NumbersConverter nc = new NumbersConverter();
-        assertTrue("Buzz".equals(nc.divFiveAndThree(5).toString()));
+        assertEquals("Buzz", (nc.divFiveAndThree(5)));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class NumbersConverterTest {
     @Test
     public void testDivThreeAndFive() throws Exception {
         NumbersConverter nc = new NumbersConverter();
-        assertTrue("FizzBuzz".equals(nc.divFiveAndThree(15).toString()));
+        assertEquals("FizzBuzz",(nc.divFiveAndThree(15)));
 
     }
 }

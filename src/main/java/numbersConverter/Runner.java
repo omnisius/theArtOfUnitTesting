@@ -5,8 +5,7 @@ package numbersConverter;
  */
 public class Runner {
     public static void main(String[] args) {
-        NumbersWriter na = new NumbersWriter();
-        na.printNumbers();
-
+        NumbersWriter nw = new NumbersWriter();
+        nw.printNumbers();
     }
 }

@@ -9,17 +9,18 @@ import java.util.Scanner;
  */
 public class NumbersWriter {
     public void printNumbers() {
+        StringBuilder stb = null;
         List intsList = getScannedList();
         for (Object s : intsList) {
             NumbersConverter nc = new NumbersConverter();
-            StringBuilder stb = new StringBuilder(nc.divFiveAndThree((Integer) intsList.get(0)));
+            stb = new StringBuilder(nc.divFiveAndThree((Integer) intsList.get(0)));
 
             for (int i = 1; i < intsList.size(); i++ ) {
                 stb.append(", ");
                 stb.append(nc.divFiveAndThree((Integer) intsList.get(i)));
             }
-            System.out.println(stb);
         }
+        System.out.println(stb);
     }
 
     public List getScannedList() {

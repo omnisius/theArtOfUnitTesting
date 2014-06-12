@@ -4,29 +4,27 @@ package numbersConverter;
  * Created by Богдан on 12.06.2014.
  */
 public class NumbersConverter {
-    StringBuilder str;
+    String str;
     private static final int THREE = 3;
     private static final int FIVE = 5;
 
-    public StringBuilder divThree(int i){
+    public String divThree(int i){
         if (((i % THREE) == 0) && (i >= THREE)){
-            str = new StringBuilder("Fizz");
+            str = "Fizz";
         }  else {
-            str = new StringBuilder(String.valueOf(i));
+            str = String.valueOf(i);
         }
         return str;
     }
 
-    public StringBuilder divFiveAndThree(int i){
+    public String divFiveAndThree(int i){
         str = divThree(i);
-        if (((i % FIVE) == 0)&&(i >= FIVE)&&("Fizz".equals(str.toString()))) {
-            str.append("Buzz");
+        if (((i % FIVE) == 0)&&(i >= FIVE)&&("Fizz".equals(str))) {
+            str = new StringBuilder(str).append("Buzz").toString();
         } else if (((i % FIVE) == 0)&&(i >= FIVE)){
-            str = new StringBuilder("Buzz");
-        }else if (!("Fizz".equals(str.toString()))){
-            str = new StringBuilder(String.valueOf(i));
-        } else{
-            str = str;
+            str = "Buzz";
+        }else if (!("Fizz".equals(str))){
+            str = String.valueOf(i);
         }
     return str;
     }
