@@ -10,7 +10,7 @@ public class NumbersConverterTest {
     @Test
     public void testDivThree() throws Exception {
         NumbersConverter nc = new NumbersConverter();
-        assertTrue("Fizz".equals(nc.divThree(3)));
+        assertEquals("Fizz", (nc.divThree(3)));
     }
 
     @Test
