@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class NumbersWriter {
     public void printNumbers() {
         StringBuilder stb = null;
-        List intsList = getScannedList();
+        ListGetter lg = new ListGetter();
+        List intsList = lg.getScannedList();
         for (Object s : intsList) {
             NumbersConverter nc = new NumbersConverter();
             stb = new StringBuilder(nc.divFiveAndThree((Integer) intsList.get(0)));
@@ -23,22 +24,5 @@ public class NumbersWriter {
         System.out.println(stb);
     }
 
-    public List getScannedList() {
-        Scanner scanner = new Scanner(System.in);
-        List<Integer> intsList = new ArrayList<Integer>();
-        System.out.println("Enter integer numbers:");
-        try {
-            String[] strs = scanner.nextLine().split(" ");
-            for (String str : strs) {
-                Integer i = new Integer(str);
-                intsList.add(i);
-            }
-            return intsList;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return null;
-        } finally {
-            scanner.close();
-        }
-    }
+
 }
